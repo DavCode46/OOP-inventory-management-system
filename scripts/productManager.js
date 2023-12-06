@@ -35,12 +35,25 @@ export class ProductManager {
         }
     }
 
+    saveToLocalStorage() {
+        const serializedData = JSON.stringify(this.#products);
+        localStorage.setItem('productManagerData', serializedData);
+    }
+
+   /*  // Método para cargar desde localStorage
+    loadFromLocalStorage() {
+        const data = localStorage.getItem('productManagerData');
+        if (data) {
+            this.#products = JSON.parse(data);
+        }
+    }
+
     // Método para mostrar todos los productos dentro del Array
     showProducts() {
         for (const product of this.#products) {
             console.log(`ID: ${product.id}, Nombre: ${product.nombre}, Cantidad: ${product.cantidad}, Precio: ${product.precio}`);
         }
-    }
+    } */
 
     get products(){
         return this.#products;
