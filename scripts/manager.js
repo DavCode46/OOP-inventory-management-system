@@ -1,9 +1,11 @@
 import { Product } from "./product.js";
 import { ProductManager } from "./productManager.js";
 
+
 let editing = false;
 let editedProductId = null; // ID del producto editado
 const productManager = new ProductManager();
+
 
 export const manager = () => {
     
@@ -42,6 +44,7 @@ export const manager = () => {
                 editing = false;
                 editedProductId = null;
                 addBtn.textContent = 'Agregar Producto';
+                
             }
         } else {
             if(productName && 
@@ -52,7 +55,7 @@ export const manager = () => {
                      // Agregar un nuevo producto
                     const newProduct = new Product(Date.now(), productName, productQuantity, productPrice);
                     productManager.addProduct(newProduct);
-                    
+      
                     // Restaurar el formulario
                     productForm.reset();
                 }          
@@ -62,7 +65,7 @@ export const manager = () => {
 
     function listProducts() {
         tableBody.innerHTML = "";
-
+        
         const products = productManager.listProducts();
 
         products.forEach((product) => {
@@ -97,6 +100,8 @@ export const manager = () => {
                 listProducts();
             });
         });
+        
+        
     }
 
     listProducts();

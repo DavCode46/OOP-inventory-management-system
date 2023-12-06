@@ -12,12 +12,12 @@ export const searchItem = () => {
       const searchValue = searchInput.value.toUpperCase();
       const products = productManager.listProducts();
    
-      const searchItem = products.find((item) => item.nombre.toUpperCase() === searchValue);
+      const searchItem = products.find((item) => item.name.toUpperCase() === searchValue);
     
       if (searchItem) {
-        searchResult.innerHTML = `Datos del Producto: <p>Producto: ${searchItem.nombre}</p>
-                                  <p>Cantidad: ${searchItem.cantidad} uds</p>
-                                  <p>Precio: ${searchItem.precio}€</p>`;
+        searchResult.innerHTML = `Datos del Producto: <p>Producto: ${searchItem.name}</p>
+                                  <p>Cantidad: ${searchItem.quantity} uds</p>
+                                  <p>Precio: ${searchItem.price}€</p>`;
       } else {
         searchResult.textContent = "Producto no encontrado";
       }

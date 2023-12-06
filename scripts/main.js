@@ -4,7 +4,6 @@
  **GitHub: https://github.com/DavidMenendezBlanco/inventory-management-system.git
  */
 
-/* import { calculateTotalInventory } from './total.js';  */
 import { darkMode } from "./darkMode.js";
 import { manager } from './manager.js';
 import { calculateTotalInventory } from "./total.js";

@@ -11,8 +11,8 @@ export const calculateTotalInventory = () => {
 
         const products = productManager.listProducts();
         products.forEach((item) => {
-            totalQuantity += item.cantidad;
-            totalPrice += item.cantidad * item.precio;
+            totalQuantity += item.quantity;
+            totalPrice += item.quantity * item.price;
         });
 
         totalInventory.innerHTML = `<table>

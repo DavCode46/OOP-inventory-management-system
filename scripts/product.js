@@ -1,14 +1,24 @@
 export class Product {
     #id;
-    #nombre;
-    #cantidad;
-    #precio;
+    #name;
+    #quantity;
+    #price;
 
-    constructor(id, nombre, cantidad, precio) {
+    constructor(id, name, quantity, price) {
         this.#id = id;
-        this.#nombre = nombre;
-        this.#cantidad = cantidad;
-        this.#precio = precio;
+        this.#name = name;
+        this.#quantity = quantity;
+        this.#price = price;
+    }
+
+     
+     toJSON() {
+        return {
+            id: this.#id,
+            name: this.#name,
+            quantity: this.#quantity,
+            price: this.#price
+        };
     }
 
     get id() {
@@ -19,31 +29,31 @@ export class Product {
         this.#id = value
     }
 
-    get nombre() {
-        return this.#nombre;
+    get name() {
+        return this.#name;
     }
 
-    set nombre(value) {
-        this.#nombre = value
+    set name(value) {
+        this.#name = value
     }
 
-    get cantidad() {
-        return this.#cantidad;
+    get quantity() {
+        return this.#quantity;
     }
 
-    set cantidad(value) {
-        this.#cantidad = value
+    set quantity(value) {
+        this.#quantity = value
     }
 
-    get precio() {
-        return this.#precio;
+    get price() {
+        return this.#price;
     }
 
-    set precio(value) {
-        this.#precio = value
+    set price(value) {
+        this.#price = value
     }
 
     showProduct(){
-        console.log(`ID: ${this.#id}, Nombre: ${this.#nombre}, Cantidad: ${this.#cantidad}, Precio: ${this.#precio}`);
+        console.log(`ID: ${this.#id}, Nombre: ${this.#name}, Cantidad: ${this.#quantity}, Precio: ${this.#price}`);
     }
 }

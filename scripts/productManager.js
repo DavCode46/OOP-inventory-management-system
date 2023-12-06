@@ -1,8 +1,10 @@
+import { Product } from './product.js';
 export class ProductManager {
     #products;
 
     constructor() {
         this.#products = [];
+        this.loadFromLocalStorage();
     }
 
     // Método para obtener la lista de productos
@@ -13,7 +15,9 @@ export class ProductManager {
     // Método para agregar el producto
     addProduct(product) {
         this.#products.push(product);
+        this.saveToLocalStorage();
     }
+    
 
     // Método para actualizar un producto por su ID
     updateProductById(id, updateProduct) {
@@ -22,6 +26,8 @@ export class ProductManager {
         // Si no existe error (es coincidente el index)
         if (index !== -1) {
             this.#products[index] = updateProduct;
+            localStorage.removeItem(id);
+            this.saveToLocalStorage();
         }
 
     }
@@ -32,29 +38,27 @@ export class ProductManager {
 
         if (index !== -1) {
             this.#products.splice(index, 1);
+            localStorage.removeItem(id);
         }
     }
 
     saveToLocalStorage() {
-        const serializedData = JSON.stringify(this.#products);
-        localStorage.setItem('productManagerData', serializedData);
+        this.#products.forEach(product => {
+            localStorage.setItem(product.id, JSON.stringify(product.toJSON()));
+        });
     }
-
-   /*  // Método para cargar desde localStorage
+    
     loadFromLocalStorage() {
-        const data = localStorage.getItem('productManagerData');
-        if (data) {
-            this.#products = JSON.parse(data);
-        }
+        const products = Object.keys(localStorage).map(key => {
+            const data = JSON.parse(localStorage.getItem(key));
+            return new Product(data.id, data.name, data.quantity, data.price);
+        });
+    
+        this.#products = products;
     }
-
-    // Método para mostrar todos los productos dentro del Array
-    showProducts() {
-        for (const product of this.#products) {
-            console.log(`ID: ${product.id}, Nombre: ${product.nombre}, Cantidad: ${product.cantidad}, Precio: ${product.precio}`);
-        }
-    } */
-
+    
+    
+    
     get products(){
         return this.#products;
     }

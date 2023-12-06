@@ -18,9 +18,12 @@
 /* Fuentes */
 @font-face {
     font-family: Montserrat;
-    src: url("/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
     font-family: PlayFair;
-    src: url("/assets/fonts/PlayfairDisplay/PlayfairDisplay-BoldItalic.ttf") format("truetype");
+    src: url('../assets/fonts/PlayfairDisplay/PlayfairDisplay-BoldItalic.ttf');
 }
 
 /* resetea padding y margin del navegador */
@@ -91,25 +94,55 @@ body.dark .header{
 .banner{
     background: transparent;
     width: 60rem;
-    position: relative;
-    
+    position: relative;    
 }
 
 body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Montserrat;
     font-size: 3rem;
     font-family: Montserrat;
     transition: .3s ease all;
+    background-image: url('../assets/img/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.dark{
     background: var(--black);
     color: var(--lightGrey);
+    background-image: url('../assets/img/fondoDark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1{
-    text-align: center;
+    margin: 0 auto;
     margin-top: 3rem;
+    width: 19ch;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    border-right: 2px solid black;
+
+    animation: typing 3s steps(18) alternate infinite,
+                blink .5s linear infinite;
+}
+
+body.dark h1{
+    border-color: var(--lightGreyHover);
+}
+
+@keyframes typing{
+    from{
+        width: 0;
+    }
+}
+@keyframes blink{
+    50%{
+        border-color: transparent;
+    }
 }
 /* Estilos tabla */
 .inventory-table-styles,
@@ -269,7 +302,7 @@ input:focus::placeholder{
     vertical-align: middle;
     margin-right: -1rem;
 }
-
+/* Clase utilizada para cambiar el texto del botón en JS */
 .editing{
     
 }
@@ -334,7 +367,82 @@ button{
     border: none;
     border-radius: .5rem;
     cursor: pointer;
+    font-family: PlayFair;
+} 
+
+body.dark button{
+    background: linear-gradient(102deg, #4551b5 40%, #543fd7 60%);
+    color: #fff;
 }
+
+body.dark .totalBtn{
+    
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    min-width: 200px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .1);
+    }
+    70%{
+        transform: scale(1);
+        box-shadow: 0 0 0 25px rgba(255, 255, 255, 0);
+    }
+    100%{
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+/* button{
+    background: black;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 16px 32px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    45deg,
+                    red, blue, deeppink, blue,
+                    red, blue, deeppink, blue
+                );
+                background-size: 800%;
+                border-radius: 10px;
+                filter: blur(8px);
+
+                animation: glowing 20s linear infinite;
+            }
+}
+
+@keyframes glowing{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+
+}
+ */
 
 body.dark button{
     background: var(--blue);
@@ -348,15 +456,9 @@ body.dark button:hover{
     background: var(--blueHover);
 }
 
+
 .addBtn{
     margin-left: -.3rem;
-}
-
-.edit-button,
-.delete-button{
-    width: 3rem;
-    font-size: 3rem;
-    border-radius: 4rem;
 }
 
 .edit-button{
@@ -383,6 +485,7 @@ body.dark button:hover{
     width: 90%;
     padding-top: 7rem;
     border-radius: 2rem;
+    background: rgb(239,250,255);
 }
 
 .login{
@@ -545,66 +648,6 @@ body.dark .sesion-init:hover{
     margin-top: 1rem;
     transform: translateX(-40px);
     cursor: pointer;
-}
-
-/* Estilos para ventana Modal */
-
-.modal-header{
-    background-color: #ececec;
-}
-
-body.dark .modal-header{
-    background: #353535;
-}
-
-.modal-body label{
-    font-size: 1.5rem;
-}
-
-body.dark .modal-body{
-    background: var(--darkGrey);
-}
-
-body.dark .modal-footer{
-    background: #353535;
-}
-
-body.dark .modal .custom-close-icon{
-    visibility: visible;
-    background: transparent;
-    color: var(--white);
-    font-size: 3rem;
-    position: relative;
-    top: -15px;  
-}
-
-body.dark .modal .btn-close{
-    background: transparent;
-}
-
-.modal .btn-close:hover{
-    background-color: transparent ;
-}
-
-.custom-close-icon{
-    visibility: hidden;
-}
-
-.btn-primary{
-    background-color: var(--red);
-}
-
-.btn-primary:hover{
-    background-color: var(--redHover);
-}
-
-.btn-primary:active{
-    background-color: var(--redHover);
-}
-
-.btn{
-    padding: .8rem 1.2rem;
-    font-size: 1.2rem;
 }
 
 /* Botón modo oscuro/claro */
