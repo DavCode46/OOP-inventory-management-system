@@ -1,0 +1,688 @@
+/* Palta de colores para contenido principal */
+:root{
+    --darkGrey: rgb(34, 34, 34);
+    --lightGrey: #bcbcbc;
+    --lightGreyHover: #acabab;
+    --black: #1f1e1e;
+    --white: #fefefe;
+    --blue: rgb(62, 96, 233);
+    --blueHover: #254be6;
+    --red: rgba(229,0,25,255);
+    --redHover: #c50118; 
+    --yellowEdit: #daa520;
+    --yellowEditHover: #ecb427;
+    --darkShadow: 10px 10px 20px rgba(170, 170, 170, .16);
+    --lightShadow: 10px 10px 20px rgba(0, 0, 0, .16);
+}
+
+/* Fuentes */
+@font-face {
+    font-family: Montserrat;
+    src: url("/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-family: PlayFair;
+    src: url("/assets/fonts/PlayfairDisplay/PlayfairDisplay-BoldItalic.ttf") format("truetype");
+}
+
+/* resetea padding y margin del navegador */
+/* Equipara 1rem a 10px */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+/* Transiciones del contenedor de búsqueda de productos */
+
+::view-transition-old(searchResult),
+::view-transition-new(searchResult){
+    animation-duration: 2s;
+}
+::view-transition-old(searchResult){
+    animation-name: scaleIn;
+}
+::view-transition-new(searchResult){
+    animation-name: scaleOut;
+}  
+@keyframes scaleIn{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes scaleOut{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}  
+/* Estilos globales */
+.header{
+    background-color: #ececec;
+}
+
+body.dark .header{
+    background: #393939;
+}
+
+.logo{
+    width: 10rem;
+    height: auto;
+    margin-left: 2rem;
+}
+
+.main-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.paragraph{
+    font-size: 2rem;
+    margin: 5rem;
+}
+
+.banner{
+    background: transparent;
+    width: 60rem;
+    position: relative;
+    
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+    font-family: Montserrat;
+    transition: .3s ease all;
+}
+
+body.dark{
+    background: var(--black);
+    color: var(--lightGrey);
+}
+
+h1{
+    text-align: center;
+    margin-top: 3rem;
+}
+/* Estilos tabla */
+.inventory-table-styles,
+.total-inventory{
+    border-collapse: collapse;
+    width: 80%;
+    font-size: 3rem;
+    margin: 2rem auto;
+    color: #c1c1c1;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+    background: rgb(239,250,255);
+    background: radial-gradient(circle, rgba(239,250,255,1) 91%, rgba(229,0,25,1) 100%);
+}
+
+.total-inventory{
+    width: 14%;
+}
+
+body.dark .inventory-table-styles,
+body.dark .total-inventory{
+    background: var(--darkGrey);
+    box-shadow: var(--darkShadow);
+    background: radial-gradient(circle, rgba(34, 34, 34,1) 91%, rgb(62, 96, 233, 1) 100%);
+}
+
+.inventory-table-styles th,
+.inventory-table-styles td,
+.total-inventory th,
+.total-inventory td{
+    border: .1rem solid #cccccc;
+    padding: .8rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+body.dark .inventory-table-styles th,
+body.dark .inventory-table-styles td,
+body.dark .total-inventory th,
+body.dark .total-inventory td{
+    color: var(--white);
+}
+
+body.dark .inventory-table-styles th,
+body.dark .total-inventory th{
+    background: #353535; 
+}
+
+.inventory-table-styles td,
+.total-inventory td{
+    color: rgb(41, 41, 41);
+}
+
+.inventory-table-styles th,
+.total-inventory th{
+    background-color: var(--red);
+    color: white;
+    font-family: PlayFair;
+}
+
+.total-inventory{
+    visibility: hidden;
+}
+
+/* Estilos formulario */
+
+.product-form-styles{
+    background-color: #ececec;
+    width: 60%;
+    height: 50rem;
+    color: black;
+    padding: 2rem;
+    border: 1px solid #333;
+    border-radius: .5rem;
+    margin: 5rem auto;
+    box-shadow: 0 .2rem 2rem rgb(0, 0, 0, 1);
+} 
+
+body.dark .product-form-styles{
+    background: var(--darkGrey);
+}
+
+.product-form-styles legend{
+    border-bottom: .2rem solid black;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+body.dark .product-form-styles legend{
+    border-bottom: .2rem solid var(--white);
+    color: var(--white);
+}
+/* Estilos para etiquetas y campos */
+
+label{
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+body.dark label{
+    color: var(--white);
+}
+
+input{
+    width: 97%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: .1rem solid #333;
+    border-radius: .3rem;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 700;
+    background-color: rgb(148 148 148 / 50%);
+    outline: none;
+}
+
+input:focus{
+    outline: auto;
+    outline-color: #e50019;
+}
+
+body.dark input:focus{
+    outline-color: var(--lightGreyHover);
+}
+
+input::placeholder{
+    font-weight: 700;
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+
+/* Estilos para formulario de búsqueda */
+
+.searchBarContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.searchBarContainer input{
+    margin-right: 1.5rem;
+    width:  50%;
+    height: 3rem;
+    
+} 
+
+.searchBarContainer button{
+    background: transparent;
+    color: #000;
+    font-size: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: -1rem;
+}
+
+.editing{
+    
+}
+
+body.dark .searchBarContainer button{
+    color: var(--white);
+    background: transparent;
+}
+
+.searchBarContainer button:hover,
+body.dark .searchBarContainer button:hover{
+    background: transparent;
+}
+
+.container-result{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;   
+}
+
+.search-result{
+    font-weight: 700;
+    font-size: 3rem;
+    border: .3px solid rgb(129, 129, 129);
+    border-radius: .5rem;
+    display: inline-block;
+    padding: 1rem;
+    box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.75);
+    background: rgb(239,250,255);
+    background: radial-gradient(circle, rgba(239,250,255,1) 0%, rgba(197,1,24,1) 100%);
+    color: #000;
+    visibility: hidden;
+}
+
+body.dark .search-result{
+    background: var(--darkGrey);
+    color: var(--white);
+}
+
+.search-result::first-line{
+    color: #effaff;
+    text-decoration: underline;
+    font-size: 2.3rem;
+}
+
+body.dark .search-result::first-line{
+    color: var(--blue);
+}
+
+.visible{
+    visibility: visible;
+}
+
+/* Estilos botones */
+button{
+    margin: 2%;
+    background-color: var(--red);
+    color: white;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+body.dark button{
+    background: var(--blue);
+}
+
+button:hover{
+    background-color: var(--redHover);
+}
+
+body.dark button:hover{
+    background: var(--blueHover);
+}
+
+.addBtn{
+    margin-left: -.3rem;
+}
+
+.edit-button,
+.delete-button{
+    width: 3rem;
+    font-size: 3rem;
+    border-radius: 4rem;
+}
+
+.edit-button{
+    background-color: var(--yellowEdit);
+}
+
+.edit-button:hover{
+    background-color: var(--yellowEditHover);
+}
+
+.delete-button:hover,
+.edit-button:hover,
+.searchBarContainer button:hover{
+    transform:scale3d(1.1,1.1,1.1);
+    transition:cubic-bezier(0.23, 1, 0.320, 1) all 0.6s;
+}
+
+/* Estilos para Login Y página de registro*/
+.login,
+.registration{
+    height: 50rem;
+    margin: 10rem auto;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    width: 90%;
+    padding-top: 7rem;
+    border-radius: 2rem;
+}
+
+.login{
+    width: 70rem;
+}
+
+.registration{
+    height: 100rem;
+}
+
+.login form,
+.registration form{
+    display: grid;  
+    justify-content: center;
+    padding-top: 2rem;   
+}
+
+body.dark .login,
+body.dark .registration{
+    background: var(--darkGrey);
+    box-shadow: var(--darkShadow);
+    border: .5px solid var(--lightGreyHover);
+    border-radius: 2rem;
+}
+
+.login form label,
+.registration form label{
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+}
+
+.login form label{
+    width: 5rem;
+    height: 5rem; 
+}
+
+.registration form label{
+    margin: 1rem;
+    justify-content: flex-start;
+    font-size: 1.7rem;
+}
+
+.registration form legend{
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-top: .2rem solid #000;
+    padding: 2rem;
+}
+
+body.dark .registration form legend{
+    border-top-color: var(--lightGrey);
+}
+
+.flex{
+    display: flex;
+}
+
+.flex label{
+    font-size: 3rem;
+}
+
+.login form input[type="password"],
+.login form input[type="text"],
+.registration form input{  
+    height: 5rem;
+    border: .1rem solid #dee0e4;
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+}
+
+.registration form input:focus::placeholder{
+    color: transparent;
+}
+
+.login form input[type="password"],
+.login form input[type="text"]{
+    width: 31rem;
+}
+
+.registration form input{
+    width: 50rem;
+}
+
+.login-btn,
+.registration-btn{
+    width: 30%;
+    padding: 1.2rem;
+    margin: 0;
+    background-color: rgba(229,0,25,255);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.login-btn{
+    margin: 1rem 5rem;
+}
+
+.registration-btn{
+    font-size: 1.5rem;
+}
+
+.login-btn:hover,
+.registration-btn:hover{
+    background-color: var(--redHover);
+}
+
+.heading-login{
+    margin: 0 auto;
+}
+
+.user-registration{
+    text-decoration: none;
+    text-align: right;
+    font-size: 1.7rem;
+    color: #0f3b4a;
+}
+
+body.dark .user-registration{
+    color: var(--white);
+}
+
+.user-registration:hover{
+    color: var(--redHover);
+}
+
+body.dark .user-registration:hover{
+    color: var(--blueHover);
+}
+
+.sesion-init{
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    font-variant: small-caps;
+    color: black;
+}
+
+body.dark .sesion-init{
+    color: var(--white);
+}
+
+.sesion-init:hover{
+    color: var(--redHover);
+}
+
+body.dark .sesion-init:hover{
+    color: var(--blueHover);
+}
+
+.message{
+    font-size: 2rem;
+}
+
+/* Estilos icono mostrar contraseña */
+.eye{
+    font-size: 2rem;
+    margin-top: 1rem;
+    transform: translateX(-40px);
+    cursor: pointer;
+}
+
+/* Estilos para ventana Modal */
+
+.modal-header{
+    background-color: #ececec;
+}
+
+body.dark .modal-header{
+    background: #353535;
+}
+
+.modal-body label{
+    font-size: 1.5rem;
+}
+
+body.dark .modal-body{
+    background: var(--darkGrey);
+}
+
+body.dark .modal-footer{
+    background: #353535;
+}
+
+body.dark .modal .custom-close-icon{
+    visibility: visible;
+    background: transparent;
+    color: var(--white);
+    font-size: 3rem;
+    position: relative;
+    top: -15px;  
+}
+
+body.dark .modal .btn-close{
+    background: transparent;
+}
+
+.modal .btn-close:hover{
+    background-color: transparent ;
+}
+
+.custom-close-icon{
+    visibility: hidden;
+}
+
+.btn-primary{
+    background-color: var(--red);
+}
+
+.btn-primary:hover{
+    background-color: var(--redHover);
+}
+
+.btn-primary:active{
+    background-color: var(--redHover);
+}
+
+.btn{
+    padding: .8rem 1.2rem;
+    font-size: 1.2rem;
+}
+
+/* Botón modo oscuro/claro */
+
+.switch-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 3rem;
+    margin-top: 5rem;
+}
+
+.switch{
+    all: initial;
+    background: var(--blue);
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    font-size: 4rem;
+    
+}
+
+.switch:hover{
+    background: var(--blue);
+}
+
+body.dark .switch:hover{
+    background: orange;
+}
+
+.switch::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active{
+    background-color: orange;
+    color: #000;
+
+}
+
+.switch.active::after{
+    right: 0;
+    left: unset;
+}
+
+.switch span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    background: none;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

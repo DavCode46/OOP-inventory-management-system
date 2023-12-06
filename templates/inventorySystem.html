@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de inventario</title>
+    <!--link para modal de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../assets/img/yamaha-banner.webp" alt="Logo de Yamaha" class="logo">
+    </header>
+    <h1>Gestión de inventario</h1>
+    <div class="switch-container">
+      <button class="switch" id="switch">
+        <span><i class="fa-solid fa-sun"></i></span>
+        <span><i class="fa-solid fa-moon"></i></span>
+      </button>
+    </div>
+    <form id="product-form-events" class="product-form-styles">
+      <legend>Inventario de Productos</legend>
+      <fieldset> 
+        <div class="searchBarContainer flex">
+          <button type="button" id="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" id="searchInput" placeholder="Buscar"/>
+        </div>
+       
+      </fieldset>
+      
+      <fieldset>
+        <label for="product-name">Nombre</label>
+        <input type="text" id="product-name" placeholder="Nombre producto">
+        <label for="product-quantity">Cantidad</label>
+        <input type="number" id="product-quantity" placeholder="Cantidad">
+        <label for="product-price">Precio</label>
+        <input type="number" step="0.01" id="product-price" placeholder="Precio">
+        <button type="submit" class="addBtn" id="addBtn">Agregar Producto</button> 
+        <button type="submit" class="totalBtn" id="totalBtn">Total Inventario</button> 
+      </fieldset>
+    </form>
+       
+    <div class="container-result">
+      
+      <span id="searchResult" class="search-result" style="view-transition-name: searchResult;">
+      </span>
+    </div>
+
+    
+    <table id="inventory-table-events" class="inventory-table-styles">
+        <tr id="data-row">
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <div class="container-result">
+      
+      <span class="total-inventory" id="total-inventory">
+      </span>
+    </div>
+  
+      <!--script para iconos de fontawesome-->
+    <script src="https://kit.fontawesome.com/c3db1c8a5f.js" crossorigin="anonymous"></script>      
+    <script src="../scripts/main.js" type="module"></script>
+    <!--script para ventana modal de bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
