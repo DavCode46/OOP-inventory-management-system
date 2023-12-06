@@ -52,7 +52,7 @@ export const manager = () => {
                      // Agregar un nuevo producto
                     const newProduct = new Product(Date.now(), productName, productQuantity, productPrice);
                     productManager.addProduct(newProduct);
-
+                    
                     // Restaurar el formulario
                     productForm.reset();
                 }          
