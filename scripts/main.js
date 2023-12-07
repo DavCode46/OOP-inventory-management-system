@@ -1,7 +1,7 @@
 /**
  *  **Autor: David Menéndez Blanco
  **Profesión: Estudiante de 2º DAW
- **GitHub: https://github.com/DavidMenendezBlanco/inventory-management-system.git
+ **GitHub: https://github.com/DavidMenendezBlanco/inventory-management-system-POO.git
  */
 
 import { darkMode } from "./darkMode.js";
