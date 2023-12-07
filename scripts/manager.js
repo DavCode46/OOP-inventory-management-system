@@ -1,12 +1,11 @@
 import { Product } from "./product.js";
 import { ProductManager } from "./productManager.js";
 
-
-let editing = false;
+let editing = false; // Controla cuando estamos editando un producto
 let editedProductId = null; // ID del producto editado
 const productManager = new ProductManager();
 
-
+// Función que realiza todas las operaciones de gestión de productos
 export const manager = () => {
     
     const productForm = document.getElementById("product-form-events");
@@ -23,20 +22,23 @@ export const manager = () => {
         const productQuantity = parseInt(productQuantityInput.value);
         const productPrice = parseFloat(productPriceInput.value);
 
+        // Cuando estamos editando un producto
         if (editing && editedProductId) {
             // Actualizar el producto existente
             const editedProduct = productManager.listProducts().find((product) => product.id === editedProductId);
 
+            // Si existe el producto y los datos son válidos
             if (editedProduct &&
                 productName && 
                 !isNaN(productQuantity) && 
                 !isNaN(productPrice) &&
                 productQuantity > 0 &&
                 productPrice > 0) {
-                editedProduct.nombre = productName;
-                editedProduct.cantidad = productQuantity;
-                editedProduct.precio = productPrice;
+                editedProduct.name = productName;
+                editedProduct.quantity = productQuantity;
+                editedProduct.price = productPrice;
 
+                // Actualizar el producto en el gestor
                 productManager.updateProductById(editedProductId, editedProduct);
 
                 // Restaurar el formulario y el estado
@@ -46,8 +48,9 @@ export const manager = () => {
                 addBtn.textContent = 'Agregar Producto';
                 
             }
-        } else {
-            if(productName && 
+        } else { // Si no estamos editando un producto es que lo estamos agregando
+                // Así con el mismo botón manejamos las dos opciones
+            if(productName && // Si los datos son válidos
                 !isNaN(productQuantity) && 
                 !isNaN(productPrice) &&
                 productQuantity > 0 &&
@@ -63,12 +66,13 @@ export const manager = () => {
         listProducts();
     });
 
+    // Función que dibuja la tabla en el template
     function listProducts() {
         tableBody.innerHTML = "";
         
         const products = productManager.listProducts(); 
        
-        products.forEach((product) => {
+        products.forEach((product) => { // Si el producto no es un usuario lo muestra en la tabla
             if(localStorage.key(product.id) !== 'users'){
                 const row = document.createElement("tr");
             row.innerHTML = `
@@ -91,13 +95,13 @@ export const manager = () => {
                 productQuantityInput.value = product.quantity;
                 productPriceInput.value = product.price;
 
-                editing = true;
-                editedProductId = product.id;
+                editing = true; // Estamos editando un producto
+                editedProductId = product.id; // ID del producto editado
                 addBtn.textContent = 'Actualizar Producto';
             });
 
             deleteButton.addEventListener('click', () => {
-                productManager.deleteProductById(product.id);
+                productManager.deleteProductById(product.id); // Eliminar el producto del gestor
                 listProducts();
             });
             }           

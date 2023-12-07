@@ -158,7 +158,7 @@ body.dark h1{
 }
 
 .total-inventory{
-    width: 14%;
+    max-width: 30rem;
 }
 
 body.dark .inventory-table-styles,
@@ -375,7 +375,8 @@ body.dark button{
     color: #fff;
 }
 
-body.dark .totalBtn{
+body.dark .totalBtn,
+.totalBtn{
     
     display: inline-block;
     padding: 1rem 2rem;
