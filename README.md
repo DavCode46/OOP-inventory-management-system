@@ -23,7 +23,7 @@
     * manager.js -> Realiza las funciones de gestión de inventario
     * patternValidation.js -> Gestión de los patrones de registro/login
     * product.js -> Clase Product
-    * productManager.js -> clase ProductManager
+    * productManager.js -> Clase ProductManager
     * searchProduct.js -> Función de búsqueda de productos
     * total.js -> Función de cálculo total de inventario
     * userRegistration.js -> Gestiona el registro y login de usuarios
