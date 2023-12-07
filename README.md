@@ -2,7 +2,8 @@
 
 ## Realizado con HTML, CSS y JS 
 
-**Autor** ***David Menéndez Blanco*** <br>
+**Autor**: ***David Menéndez Blanco*** <br>
+**GitHub**: ***https://github.com/DavidMenendezBlanco/inventory-management-system-POO.git***
 <hr>
 
 ### Estructura del proyecto:
