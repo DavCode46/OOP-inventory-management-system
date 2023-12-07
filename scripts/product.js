@@ -1,3 +1,5 @@
+
+// Clase de cada producto
 export class Product {
     #id;
     #name;
@@ -11,7 +13,7 @@ export class Product {
         this.#price = price;
     }
 
-     
+     // Método para convertir el objeto a JSON y poder almacenarlo en localStorage
      toJSON() {
         return {
             id: this.#id,

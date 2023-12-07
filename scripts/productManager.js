@@ -1,10 +1,12 @@
 import { Product } from './product.js';
+
+// Clase para gestionar los productos
 export class ProductManager {
     #products;
 
     constructor() {
         this.#products = [];
-        this.loadFromLocalStorage();
+        this.loadFromLocalStorage(); // Cargar los productos del localStorage
     }
 
     // Método para obtener la lista de productos
@@ -15,7 +17,7 @@ export class ProductManager {
     // Método para agregar el producto
     addProduct(product) {
         this.#products.push(product);
-        this.saveToLocalStorage();
+        this.saveToLocalStorage(); // Guardar el producto en el localStorage
     }
     
 
@@ -26,8 +28,8 @@ export class ProductManager {
         // Si no existe error (es coincidente el index)
         if (index !== -1) {
             this.#products[index] = updateProduct;
-            localStorage.removeItem(id);
-            this.saveToLocalStorage();
+            localStorage.removeItem(id); // Eliminar el producto del localStorage
+            this.saveToLocalStorage(); // Guardar el producto actualizado en el localStorage
         }
 
     }
@@ -38,16 +40,18 @@ export class ProductManager {
 
         if (index !== -1) {
             this.#products.splice(index, 1);
-            localStorage.removeItem(id);
+            localStorage.removeItem(id); // Eliminar el producto del localStorage
         }
     }
 
+    // Método para guardar un producto en el localStorage por su ID
     saveToLocalStorage() {
         this.#products.forEach(product => {
             localStorage.setItem(product.id, JSON.stringify(product.toJSON()));
         });
     }
     
+    // Método para cargar los productos del localStorage
     loadFromLocalStorage() {
         const products = Object.keys(localStorage)
             .filter(key => key !== 'users') // Excluir elementos relacionados con usuarios
