@@ -49,15 +49,17 @@ export class ProductManager {
     }
     
     loadFromLocalStorage() {
-        const products = Object.keys(localStorage).map(key => {
-            const data = JSON.parse(localStorage.getItem(key));
-            return new Product(data.id, data.name, data.quantity, data.price);
-        });
+        const products = Object.keys(localStorage)
+            .filter(key => key !== 'users') // Excluir elementos relacionados con usuarios
+            .map(key => {
+                const data = JSON.parse(localStorage.getItem(key));
+                return new Product(data.id, data.name, data.quantity, data.price);
+            });
     
         this.#products = products;
     }
     
-    
+  
     
     get products(){
         return this.#products;

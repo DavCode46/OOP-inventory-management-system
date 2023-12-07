@@ -66,14 +66,15 @@ export const manager = () => {
     function listProducts() {
         tableBody.innerHTML = "";
         
-        const products = productManager.listProducts();
-
+        const products = productManager.listProducts(); 
+       
         products.forEach((product) => {
-            const row = document.createElement("tr");
+            if(localStorage.key(product.id) !== 'users'){
+                const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${product.nombre}</td>
-                <td>${product.cantidad}</td>
-                <td>${product.precio}</td>
+                <td>${product.name}</td>
+                <td>${product.quantity}</td>
+                <td>${product.price}</td>
                 <td>
                     <button class="edit-button">Editar</button>
                     <button class="delete-button">Eliminar</button>
@@ -86,9 +87,9 @@ export const manager = () => {
             const deleteButton = row.querySelector('.delete-button');
 
             editButton.addEventListener("click", () => {
-                productNameInput.value = product.nombre;
-                productQuantityInput.value = product.cantidad;
-                productPriceInput.value = product.precio;
+                productNameInput.value = product.name;
+                productQuantityInput.value = product.quantity;
+                productPriceInput.value = product.price;
 
                 editing = true;
                 editedProductId = product.id;
@@ -99,9 +100,8 @@ export const manager = () => {
                 productManager.deleteProductById(product.id);
                 listProducts();
             });
-        });
-        
-        
+            }           
+        });       
     }
 
     listProducts();

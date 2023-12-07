@@ -1,4 +1,7 @@
-# CRUD de Gestión de inventario realizado con HTML, CSS y JS 
+# CRUD de Gestión de inventario utilizando POO 
 
-**Autor** David Menéndez Blanco
+## Realizado con HTML, CSS y JS 
+
+
+**Autor** David Menéndez Blanco <br>
 **Profesión** Estudiante de 2º DAW
