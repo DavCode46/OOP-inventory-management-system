@@ -9,6 +9,7 @@ export const calculateTotalInventory = () => {
         let totalQuantity = 0;
         let totalPrice = 0;
 
+        // Recorre la lista de productos para calcular el inventario total
         const products = productManager.listProducts();
         products.forEach((item) => {
             totalQuantity += item.quantity;

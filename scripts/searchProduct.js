@@ -7,8 +7,7 @@ export const searchItem = () => {
 
     //Función de búsqueda de producto
     const searchForItem = () => {
-       
-        
+             
       const searchValue = searchInput.value.toUpperCase();
       const products = productManager.listProducts();
    
