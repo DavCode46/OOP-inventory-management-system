@@ -91,6 +91,7 @@ export const manager = () => {
             const deleteButton = row.querySelector('.delete-button');
 
             editButton.addEventListener("click", () => {
+                const form = document.getElementById("product-form-events");
                 productNameInput.value = product.name;
                 productQuantityInput.value = product.quantity;
                 productPriceInput.value = product.price;
@@ -98,6 +99,7 @@ export const manager = () => {
                 editing = true; // Estamos editando un producto
                 editedProductId = product.id; // ID del producto editado
                 addBtn.textContent = 'Actualizar Producto';
+                form.scrollIntoView({behavior: 'smooth'});
             });
 
             deleteButton.addEventListener('click', () => {
