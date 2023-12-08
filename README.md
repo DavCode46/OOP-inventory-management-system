@@ -17,13 +17,13 @@
         + fondoDark.jpg
         + yamaha-banner.webp
 2. scripts
-    * darkMode.js -> Controla el cambio entre el darMode y el lightMode
+    * darkMode.js -> Controla el cambio entre el darkMode y el lightMode
     * eyeIcon.js -> Icono que muestra u oculta los password
     * main.js -> Js Principal, llama a todas las funciones
     * manager.js -> Realiza las funciones de gestión de inventario
     * patternValidation.js -> Gestión de los patrones de registro/login
     * product.js -> Clase Product
-    * productManager.js -> clase ProductManager
+    * productManager.js -> Clase ProductManager
     * searchProduct.js -> Función de búsqueda de productos
     * total.js -> Función de cálculo total de inventario
     * userRegistration.js -> Gestiona el registro y login de usuarios
