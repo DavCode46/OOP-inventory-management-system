@@ -44,6 +44,14 @@ export class ProductManager {
         }
     }
 
+    // Método para buscar un producto por su nombre
+    searchProduct(searchValue){
+        const products = this.#products;
+        const upperCaseValue = searchValue.toUpperCase();
+        const searchItem = products.find((item) => item.name.toUpperCase() === upperCaseValue);
+        return searchItem;
+    }
+
     // Método para guardar un producto en el localStorage por su ID
     saveToLocalStorage() {
         this.#products.forEach(product => {

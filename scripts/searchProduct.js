@@ -7,12 +7,9 @@ export const searchItem = () => {
 
     //Función de búsqueda de producto
     const searchForItem = () => {
-             
-      const searchValue = searchInput.value.toUpperCase();
-      const products = productManager.listProducts();
-   
-      const searchItem = products.find((item) => item.name.toUpperCase() === searchValue);
-    
+  
+      const searchInputValue = searchInput.value;
+      const searchItem = productManager.searchProduct(searchInputValue);
       if (searchItem) {
         searchResult.innerHTML = `Datos del Producto: <p>Producto: ${searchItem.name}</p>
                                   <p>Cantidad: ${searchItem.quantity} uds</p>
