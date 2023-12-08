@@ -3,7 +3,7 @@
 ## Realizado con HTML, CSS y JS 
 
 **Autor**: ***David Menéndez Blanco*** <br>
-**GitHub**: ***https://github.com/DavidMenendezBlanco/inventory-management-system-POO.git***
+**GitHub**: ***https://github.com/DavidMenendezBlanco/OOP-inventory-management-system.git***
 <hr>
 
 ### Estructura del proyecto:
