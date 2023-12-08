@@ -9,14 +9,7 @@ export class ProductManager {
         this.#products = [];
         this.loadFromLocalStorage(); // Cargar los productos del localStorage
     }
-    searchProduct(searchValue){
-        const products = this.#products;
-        const upperCaseValue = searchValue.toUpperCase();
-        const searchItem = products.find((item) => item.name.toUpperCase() === upperCaseValue);
-        return searchItem;
-    }
-
-  
+    
     // Método para obtener la lista de productos
     listProducts() {
         return this.#products;
