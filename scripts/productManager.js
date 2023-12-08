@@ -1,5 +1,6 @@
 import { Product } from './product.js';
 
+
 // Clase para gestionar los productos
 export class ProductManager {
     #products;
