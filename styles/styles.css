@@ -718,6 +718,166 @@ body.dark .switch:hover{
     align-items: center;
 }
 
+/* MEDIA QUERIES (DISPOSITIVOS MÓVILES) */
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 6rem;
+        margin-left: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .switch-container {
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+        margin-right: 1rem;
+    }
+
+    .switch {
+        font-size: 3rem;
+    }
+
+    .product-form-styles {
+        width: 80%;
+        height: auto;
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+
+    .product-form-styles fieldset {
+        margin-bottom: 1rem;
+    }
+
+    .inventory-table-styles {
+        font-size: 1em;
+        width: 90%; 
+        margin: 1rem auto;
+        table-layout: fixed; /* Fijar el ancho de las columnas */
+    }
+    
+    .inventory-table-styles th,
+    .inventory-table-styles td {
+        padding: 0.5rem; 
+        max-width: 100px; 
+        overflow: hidden;
+        text-overflow: ellipsis; /* Mostrar puntos suspensivos si el texto es demasiado largo */
+    }
+
+    .edit-button,
+    .delete-button {
+        width: 3rem;
+        font-size: 1rem;
+    }
+
+    .addBtn,
+    .totalBtn {
+        width: 60%;
+        margin: 2rem auto;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+
+    .login,
+    .registration {
+        height: auto;
+        margin: 5rem auto;
+        width: 90%;
+    }
+
+    .login form label,
+    .registration form label {
+        font-size: 1.5rem;
+    }
+
+    .flex label {
+        font-size: 2rem;
+    }
+
+    .login form input[type="password"],
+    .login form input[type="text"]{
+        width: 60%;
+    }
+
+    .login-btn {
+        margin: auto;
+        width: 60%;
+    }
+
+    .user-registration {
+        margin: 2rem auto;
+        font-size: 1.2rem;
+    }
+
+    .flex .eye {
+        margin-top: 15px;
+    }
+
+    /* REGISTRATION PAGE */
+
+    .registration form legend {
+        font-size: 1.8rem;
+    }
+
+    .registration form input {
+        width: 95%;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .login-input {
+        width: 90%;
+    }
+
+    .registration-btn {
+        width: 60%;
+        margin: 1rem 5rem;
+    }
+
+    .sesion-init {
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .message {
+        font-size: 1.8rem;
+    }
+
+    .grid .eye {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .login-input.password {
+        padding-right: 3rem;
+        width: 90%;
+    }
+}
+
+
 
 
 

@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (user) {
           alert("Inicio de sesión realizado con éxito");
-          window.location.href = "/templates/inventorySystem.html";
+          window.location.href = "../templates/inventorySystem.html";
           loginForm.reset();
         } else {
           alert("Error de inicio de sesión. Por favor, verifica tus credenciales.");
